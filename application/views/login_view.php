@@ -15,8 +15,12 @@
     <![endif]-->    
     <link rel='stylesheet' type='text/css' href='<?php echo base_url();?>assets/css/fullcalendar.print.css' media='print' />
     
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+    <!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script> -->
+    
+    <script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery-1.7.2.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery-ui-1.8.21.custom.min.js'></script>
+    
     <script type='text/javascript' src='<?php echo base_url();?>assets/js/plugins/jquery/jquery.mousewheel.min.js'></script>
     
     <script type='text/javascript' src='<?php echo base_url();?>assets/js/plugins/cookie/jquery.cookies.2.2.0.min.js'></script>
@@ -58,28 +62,46 @@
     <script type='text/javascript' src='<?php echo base_url();?>assets/js/charts.js'></script>
     <script type='text/javascript' src='<?php echo base_url();?>assets/js/plugins.js'></script>
     
+    <!-- javascripts for inline form validation -->
+	<script src="<?php echo base_url();?>assets/js/jquery.validationEngine.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery.validationEngine-en.js"></script>
+    
+    <script>
+	    jQuery(document).ready(function()
+			{
+				// binds form submission and fields to the validation engine
+				jQuery("#login_form").validationEngine();
+				
+			});
+	    var baseurl =  "<?php echo base_url() ?>"; 
+    </script>
+    <!-- javascripts for login form validation-->
+    <script src="<?php echo base_url();?>assets/js/ajax_user_login.js"></script>
+    
 </head>
 <body>
     
     <div class="loginBox">        
         <div class="loginHead">
-            <!--<img src="img/logo.png" alt="Aquarius -  responsive admin panel" title="Aquarius -  responsive admin panel"/>-->
-			<p>User Management Admin Panel </p>
+            <img src="<?php echo base_url(); ?>assets/img/logo.png" alt=" admin panel" title="Aquarius -  responsive admin panel"/>
+			
         </div>
-        <form class="form-horizontal" action="index.html" method="POST">            
+        <!-- <form class="form-horizontal" action="index.html" method="POST"> -->
+        <?php $attributes = array('class' => 'form-horizontal', 'id' => 'login_form');?>
+        <?php echo form_open('login/login_validate',$attributes);?>            
             <div class="control-group">
                 <label for="username">User Name</label>                
-                <input type="text" id="username"/>
+                <input type="text" id="username" class="validate[required]"/>
             </div>
             <div class="control-group">
                 <label for="password">Password</label>                
-                <input type="password" id="password"/>                
+                <input type="password" id="password"class="validate[required]"/>                
             </div>
             <div class="control-group" style="margin-bottom: 5px;">                
                 <label class="checkbox"><input type="checkbox"> Remember me</label>                                                
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn btn-block">Sign in</button>
+                <button type="submit" class="btn btn-block" id="login_submit">Sign in</button>
             </div>
         </form>        
         
