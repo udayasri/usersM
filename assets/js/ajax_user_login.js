@@ -23,7 +23,7 @@ $('#login_submit').live('click',function()
 						//alert(' You are successfully log in .. ' );
 						//	$().toastmessage('showSuccessToast', "You are successfully log in .. ");
 								
-						window.location.href = baseurl+"administrator/dashboard"; //this will load the administrator main panel after user log in
+						window.location.href = baseurl+"users"; //this will load the administrator main panel after user log in
 			 		}
 					
 					else if( data.registration == "falied" ){
