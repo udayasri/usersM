@@ -15,7 +15,7 @@
 <body>
     
     <div class="header">
-        <a class="logo" href="index.html"><img src="<?php echo base_url();?>assets/img/logo.png" alt=""/></a>
+        <a class="logo" href="<?php echo base_url()?>users"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="" title="UAMC Admin Panel"/></a>
         <ul class="header_menu">
             <li class="list_icon"><a href="#">&nbsp;</a></li>
         </ul>    
@@ -35,7 +35,7 @@
                 </a>              
             </li>          
             <li>
-                <a href="forms.html">
+                <a href="<?php echo base_url();?>usergroup">
                     <span class="isw-users"></span><span class="text">User Grops</span>                 
                 </a>
             </li>                        
@@ -138,7 +138,35 @@
                                 <input value="" class="validate[required,minSize[5]]" type="password" name="password" id="password"/>
                                 <span>Minimum 5 characters</span>
                             </div>
-                        </div>   
+                        </div> 
+                        
+                        <div class="row-form clearfix">
+                            <div class="span3">User Group</div>
+                            <div class="span9">
+                                <select name="select" id="s2_1" style="width: 100%;">
+                                    <option value="1">group 1</option>
+                                    <option value="2">group 2</option>
+                                    <option value="3">group 3</option>
+                                    <option value="4">group 4</option>
+                                    <option value="5">group 5</option>
+                                    <option value="6">group 6</option>                     
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row-form clearfix">
+                            <div class="span3">Visible Users</div>
+                            <div class="span9">
+                                <select name="select" id="s2_2" style="width: 100%;" multiple="multiple">
+                                    <option value="0">abc</option>
+                                    <option value="0">cde</option>
+                                    <option value="0">test</option>
+                                    <option value="0">ggg</option>
+                                    <option value="0">xxx</option>
+                                    <option value="0">testingUser</option>                     
+                                </select>
+                            </div>
+                        </div>    
                         
                         <div class="row-form clearfix">
                             <div class="span3">First Name </div>

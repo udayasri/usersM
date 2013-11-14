@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
     
-    <title>User List</title>
+    <title>User Groups </title>
 
     <?php include('header.php'); ?>
     
@@ -24,7 +24,7 @@
     <div class="menu">                
         
         <ul class="navigation">            
-            <li class="active">
+            <li>
                 <a href="<?php echo base_url();?>users">
                     <span class="isw-list"></span><span class="text">User List</span>
                 </a>
@@ -34,7 +34,7 @@
                     <span class="isw-user"></span><span class="text">Add New User</span>
                 </a>              
             </li>          
-            <li>
+            <li class="active" >
                 <a href="<?php echo base_url();?>usergroup">
                     <span class="isw-users"></span><span class="text">User Grops</span>                 
                 </a>
@@ -57,7 +57,7 @@
             
             <ul class="breadcrumb">
                 <li><a href="#">UAMC Admin</a> <span class="divider">></span></li>                
-                <li class="active">Users</li>
+                <li class="active">User Groups</li>
             </ul>
                         
             <ul class="buttons">
@@ -113,57 +113,58 @@
                 
                 <div class="span12">                    
                     <div class="head clearfix">
-                        <div class="isw-list"></div>
-                        <h1>User List</h1>                               
+                        <div class="isw-users"></div>
+                        <h1>User Groups List</h1>
+                        <ul class="buttons">
+                            <!-- <li><a href="#" class="isw-download"></a></li>                                                        
+                            <li><a href="#" class="isw-attachment"></a></li> -->
+                            <li>
+                                <a href="#fModal" data-toggle="modal"><span class="isw-plus" ></span></a>
+                            </li>
+                        </ul>                                                      
                     </div>
                     <div class="block-fluid table-sorting clearfix">
                         <table cellpadding="0" cellspacing="0" width="100%" class="table" id="tSortable">
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" name="checkall"/></th>
-                                    <th width="25%">User Name </th>
-                                    <th width="25%">First Name</th>
-                                    <th width="25%">User Group </th>
-                                    <th width="25%">Actions</th>                                    
+                                    <th width="20%">Group Name </th>
+                                    <th width="60%">Feilds</th>
+                                    <th width="15%">Actions</th>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>abc</td>
-                                    <td>Dmitry</td>
-                                    <td>group1</td>
+                                    <td>group 1</td>
+                                    <td>First name , Email ,Phone, Address, Loan Type </td>
                                     <td>
                                     	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
                                     	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    	
-                                    </td>                                    
+                                    </td>                                   
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>cde</td>
-                                    <td>Alex</td>
-                                    <td>group2</td>
+                                    <td>group 2</td>
+                                    <td>First name , Email , Phone </td>
                                     <td>
                                     	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
                                     	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
+                                    </td>                                
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>username1</td>
-                                    <td>John</td>
-                                    <td>group2</td>
+                                    <td>group 3</td>
+                                    <td>First Name, Email, Loan Type </td>
                                     <td>
                                     	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
                                     	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
+                                    </td>                                  
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>testUser</td>
-                                    <td>Angelina</td>
-                                    <td>group3</td>
+                                    <td>group 4</td>
+                                    <td>First Name ,Email, Phone</td>
                                     <td>
                                     	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
                                     	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
@@ -171,64 +172,13 @@
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>lkdsjlf</td>
-                                    <td>Tom</td>
-                                    <td>group5</td>
+                                    <td>group 5</td>
+                                    <td>First Name, Loan Type </td>
                                     <td>
                                     	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
                                     	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>test</td>
-                                    <td>Helen</td>
-                                    <td>group2</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>gggg</td>
-                                    <td>Aqvatarius</td>
-                                    <td>group3</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>teting</td>
-                                    <td>Olga</td>
-                                    <td>group4</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>109</td>
-                                    <td>Homer</td>
-                                    <td>group5</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>xxx</td>
-                                    <td>Tifany</td>
-                                    <td>group1</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>                                
+                                    </td>                                   
+                                </tr>                               
                             </tbody>
                         </table>
                     </div>
@@ -240,6 +190,41 @@
             
         </div>
         
+    </div>
+    
+    
+     <!-- Bootrstrap modal form -->
+    <div id="fModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Add new user group</h3>
+        </div>        
+        <div class="row-fluid">
+            <div class="block-fluid">
+                <div class="row-form clearfix">
+                    <div class="span3">Group name</div>
+                    <div class="span9"><input type="text" value=""/></div>
+                </div>            
+                <div class="row-form clearfix">
+                    <div class="span5">Visible Feilds</div>
+                    <div class="span7">
+                        <select name="select" id="s2_1" style="width: 100%;" multiple="multiple">
+                            <option value="0">First Name</option>
+                            <option value="1">Email</option>
+                            <option value="2">Phone</option>
+                            <option value="3">Address</option> 
+                            <option value="4">Loan type</option> 
+                            <option value="5">Purpose of Loan</option> 
+                            <option value="6">Notes </option>                                                                    
+                        </select>
+                    </div>
+                </div>                                                                                  
+            </div>                
+        </div>                    
+        <div class="modal-footer">
+            <button class="btn btn-warning" data-dismiss="modal" aria-hidden="true">Save updates</button> 
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>            
+        </div>
     </div>   
     
 </body>
