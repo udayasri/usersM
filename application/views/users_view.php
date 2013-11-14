@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
     
-    <title>Users - Aquarius - responsive admin panel</title>
+    <title>User List</title>
 
     <?php include('header.php'); ?>
     
@@ -23,35 +23,14 @@
     
     <div class="menu">                
         
-        <!-- <div class="breadLine">            
-            <div class="arrow"></div>
-            <div class="adminControl active">
-                Hi, Aqvatarius
-            </div>
-        </div>
-        
-        <div class="admin">
-            <div class="image">
-                <img src="img/users/aqvatarius.jpg" class="img-polaroid"/>                
-            </div>
-            <ul class="control">                
-                <li><span class="icon-comment"></span> <a href="messages.html">Messages</a> <a href="messages.html" class="caption red">12</a></li>
-                <li><span class="icon-cog"></span> <a href="forms.html">Settings</a></li>
-                <li><span class="icon-share-alt"></span> <a href="login.html">Logout</a></li>
-            </ul>
-            <div class="info">
-                <span>Welcom back! Your last visit: 24.10.2012 in 19:55</span>
-            </div>
-        </div> -->
-        
         <ul class="navigation">            
             <li class="active">
-                <a href="index.html">
+                <a href="<?php echo base_url();?>users">
                     <span class="isw-list"></span><span class="text">User List</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url();?>newuser">
                     <span class="isw-user"></span><span class="text">Add New User</span>
                 </a>              
             </li>          
