@@ -11,6 +11,12 @@
 
     <?php include('header.php'); ?>
     
+    <script>
+	    var baseurl =  "<?php echo base_url() ?>"; 
+    </script>
+    <!-- javascript for  add new user -->
+    <script src="<?php echo base_url();?>assets/js/ajax_add_new_user.js"></script>
+    
 </head>
 <body>
     
@@ -117,11 +123,13 @@
                         <h1>Add New User</h1>
                     </div>
                     <form id="validation" method="POST" action="submit.action">
+                	<?php echo form_open_multipart(base_url().'newuser/addnewuser','id="add_newuser" name="add_newuser"');?>
+              		<?php echo validation_errors(); ?>
                     <div class="block-fluid">                        
                         
                         <div class="row-form clearfix">
                             <div class="span3">User Name </div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="username" name="username" class="validate[required]"/></div>
                         </div> 
                         
                          <div class="row-form clearfix">
@@ -135,7 +143,7 @@
                          <div class="row-form clearfix">
                             <div class="span3">Re-type Password</div>
                             <div class="span9">        
-                                <input value="" class="validate[required,minSize[5]]" type="password" name="password" id="password"/>
+                                <input value="" class="validate[required,minSize[5]]" type="password" name="repassword" id="repassword"/>
                                 <span>Minimum 5 characters</span>
                             </div>
                         </div> 
@@ -143,7 +151,7 @@
                         <div class="row-form clearfix">
                             <div class="span3">User Group</div>
                             <div class="span9">
-                                <select name="select" id="s2_1" style="width: 100%;">
+                                <select name="usergroup" id="usergroup" style="width: 100%;" id>
                                     <option value="1">group 1</option>
                                     <option value="2">group 2</option>
                                     <option value="3">group 3</option>
@@ -157,20 +165,20 @@
                         <div class="row-form clearfix">
                             <div class="span3">Visible Users</div>
                             <div class="span9">
-                                <select name="select" id="s2_2" style="width: 100%;" multiple="multiple">
+                                <select name="s2_2[]" id="s2_2" style="width: 100%;" multiple="multiple">
                                     <option value="0">abc</option>
-                                    <option value="0">cde</option>
-                                    <option value="0">test</option>
-                                    <option value="0">ggg</option>
-                                    <option value="0">xxx</option>
-                                    <option value="0">testingUser</option>                     
+                                    <option value="1">cde</option>
+                                    <option value="2">test</option>
+                                    <option value="3">ggg</option>
+                                    <option value="4">xxx</option>
+                                    <option value="5">testingUser</option>                     
                                 </select>
                             </div>
                         </div>    
                         
                         <div class="row-form clearfix">
                             <div class="span3">First Name </div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="firstname" name="firstname"/></div>
                         </div> 
                         
                         <div class="row-form clearfix">
@@ -180,22 +188,22 @@
                         
                         <div class="row-form clearfix">
                             <div class="span3">Phone </div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="phone" name="phone"/></div>
                         </div> 
                         
                         <div class="row-form clearfix">
                             <div class="span3">Address </div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="address" name="address"/></div>
                         </div> 
                         
                         <div class="row-form clearfix">
                             <div class="span3">Loan Type</div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="loan_type" name="loan_type"/></div>
                         </div>
                         
                         <div class="row-form clearfix">
                             <div class="span3">Purpose of the Loan </div>
-                            <div class="span9"><input type="text" value=""/></div>
+                            <div class="span9"><input type="text" value="" id="purpose_ofloan" name="purpose_ofloan"/></div>
                         </div>
                         
                                                
@@ -203,14 +211,14 @@
                             <div class="span3">Note</div>
                             <div class="span9">
                             	<!-- <textarea name="textarea">Some text in textarea field...</textarea></div> -->
-                            	<textarea id="wysiwyg" name="text" style="height: 300px;"></textarea>
+                            	<textarea id="wysiwyg" name="wysiwyg" style="height: 300px;" ></textarea>
                         	</div>                                                                      
                         
                     	</div>
                     	<div class="row-form clearfix">
                     		<div class="span3"></div>
                     		<div class="span9">
-                    		<button class="btn" type="button" style="width: 30%; margin-left: 25% ">Save</button>
+                    		<button class="btn" type="button" style="width: 30%; margin-left: 25%" id="addnew" name="addnew">Save</button>
                     		</div>
                     	</div>
                 	</div>

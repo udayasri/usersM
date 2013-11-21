@@ -90,7 +90,7 @@
                             <div class="item clearfix">
                                 <div class="image"><i class="isb-power"></i></a></div>
                                 <div class="info">
-                                    <a href="#" class="name">Logout</a>  
+                                    <a href="<?php echo base_url();?>login/log_out" class= "name">Logout</a>  
                                 </div>
                             </div>                              
                                                              
@@ -128,107 +128,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>abc</td>
-                                    <td>Dmitry</td>
-                                    <td>group1</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    	
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>cde</td>
-                                    <td>Alex</td>
-                                    <td>group2</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>username1</td>
-                                    <td>John</td>
-                                    <td>group2</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>testUser</td>
-                                    <td>Angelina</td>
-                                    <td>group3</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>lkdsjlf</td>
-                                    <td>Tom</td>
-                                    <td>group5</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>test</td>
-                                    <td>Helen</td>
-                                    <td>group2</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>gggg</td>
-                                    <td>Aqvatarius</td>
-                                    <td>group3</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>teting</td>
-                                    <td>Olga</td>
-                                    <td>group4</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>109</td>
-                                    <td>Homer</td>
-                                    <td>group5</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkbox"/></td>
-                                    <td>xxx</td>
-                                    <td>Tifany</td>
-                                    <td>group1</td>
-                                    <td>
-                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
-                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
-                                    </td>                                    
-                                </tr>                                
+                            	<?php 
+	                            	foreach( $userDetails as $row )
+	                            	{
+	                            		echo '<tr>';
+		                                echo '<td><input type="checkbox" name="checkbox"/></td>';
+		                                echo '<td>'; echo $row->user_name; echo '</td>';
+		                                echo '<td>'; echo $row->firstname; echo '</td>';
+		                                echo '<td>'; echo $row->usergroup; echo '</td>';
+		                                echo '<td>
+		                                    	<button class="btn btn-success" type="button" style="padding: 2px 14px" >Edit</button>
+		                                    	<button class="btn btn-danger" type="button" style="padding: 2px 14px" >Delete</button>
+		                                    	
+		                                    </td>                                    
+		                                </tr>';
+	                            	}
+                            	?>	              
                             </tbody>
                         </table>
                     </div>
